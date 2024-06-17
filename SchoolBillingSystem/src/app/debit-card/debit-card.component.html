@@ -1,0 +1,16 @@
+<div class="container">
+  <h2>Debit Card Details</h2>
+  <form (ngSubmit)="onSubmit(debitCardForm)" #debitCardForm="ngForm">
+    <div>
+      <label for="validThru">Valid Thru:</label>
+      <input type="date" id="validThru" name="validThru" ngModel required>
+    </div>
+    <div>
+      <label for="cardNo">Card No:</label>
+      <input type="text" id="cardNo" name="cardNo" ngModel required>
+    </div>
+    <button type="submit">Confirm</button>
+    <button type="button" (click)="onClear(debitCardForm)">Clear</button>
+  </form>
+  <div *ngIf="alertMessage" class="alert">{{ alertMessage }}</div>
+</div>

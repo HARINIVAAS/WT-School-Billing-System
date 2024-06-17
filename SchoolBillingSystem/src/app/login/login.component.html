@@ -1,0 +1,32 @@
+<div class="main-container">
+<div class="welcome-message">
+  <h2 class="wel">Hearty,Welcome to <br>
+    <span>TNPL Matric Higher Secondary School</span></h2>
+  <h3>Inspiring Excellence, Shaping Futures</h3>
+</div>
+<div class="login-container">
+  <div class="container">
+    <h2 class="header">Login</h2>
+    <form (ngSubmit)="onSubmit(loginForm)" #loginForm="ngForm">
+      <div>
+        <label for="username"></label>
+        <input type="text" id="username" name="username" placeholder="User name" ngModel required>
+      </div>
+      <div>
+        <label for="rollno"></label>
+        <input type="text" id="rollno" name="rollno" placeholder="Roll no" ngModel required>
+      </div>
+      <div>
+        <label for="email"></label>
+        <input type="email" id="email" name="email" placeholder="Email" required>
+      </div>
+      <div>
+        <label for="password"></label>
+        <input type="password" id="password" name="password" placeholder="Password" required>
+      </div>
+      <button type="submit">Login</button>
+    </form>
+    <div *ngIf="alertMessage" class="alert">{{ alertMessage }}</div>
+  </div>
+</div>
+</div>

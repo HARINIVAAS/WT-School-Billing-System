@@ -1,0 +1,14 @@
+<div class="container">
+  <h2>GPay Payment</h2>
+  <form (ngSubmit)="onSubmit()" #paymentForm="ngForm">
+      <div>
+          <label for="transactionId">Transaction ID:</label>
+          <input type="text" id="transactionId" name="transactionId" ngModel required>
+          <div *ngIf="paymentForm.submitted && !paymentForm.controls['transactionId']?.valid" class="error">
+              Transaction ID is required.
+          </div>
+      </div>
+      <button type="submit" [disabled]="!paymentForm.valid">Confirm</button>
+      <button type="button" (click)="onClear()">Clear</button>
+  </form>
+</div>
